@@ -1,0 +1,17 @@
+/bin/
+/build/
+/*.exe
+/*.exe~ 
+/*.dll
+/*.so
+/*.dylib
+
+*.tmp
+*.log
+
+.idea/
+.vscode/
+*.iml
+
+*.test
+*.out

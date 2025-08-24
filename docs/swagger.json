@@ -1,0 +1,40 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "uniconvert API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8000",
+    "basePath": "/api/v1",
+    "paths": {
+        "/convert/audio": {
+            "post": {
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Audio files convert",
+                "parameters": [
+                    {
+                        "type": "file",
+                        "description": "audiofile to convert",
+                        "name": "file",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "ext",
+                        "name": "ext",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
+}

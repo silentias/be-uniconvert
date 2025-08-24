@@ -1,0 +1,27 @@
+basePath: /api/v1
+host: localhost:8000
+info:
+  contact: {}
+  title: uniconvert API
+  version: "1.0"
+paths:
+  /convert/audio:
+    post:
+      consumes:
+      - multipart/form-data
+      parameters:
+      - description: audiofile to convert
+        in: formData
+        name: file
+        required: true
+        type: file
+      - description: ext
+        in: formData
+        name: ext
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Audio files convert
+swagger: "2.0"
