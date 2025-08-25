@@ -45,3 +45,11 @@ func Audio(c *gin.Context) {
 		"url": pathToFile,
 	})
 }
+
+// @Summary get aviable exts audio to convert
+// @Accept json
+// @Produce json
+// @Router /convert/audio/ext [get]
+func AudioExt(c *gin.Context) {
+	c.JSON(200, gin.H{"ext": pkg.AllowedExtensions})
+}

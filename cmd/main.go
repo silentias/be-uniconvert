@@ -20,5 +20,6 @@ func main() {
 	routers.InitRouters(r)
 	docs.SwaggerInfo.BasePath = "/api/v1"
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	r.Static("/uploads", "./uploads")
 	r.Run(config.GetHost() + ":" + config.GetPort())
 }

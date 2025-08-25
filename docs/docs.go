@@ -42,6 +42,18 @@ const docTemplate = `{
                 ],
                 "responses": {}
             }
+        },
+        "/convert/audio/ext": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "get aviable exts audio to convert",
+                "responses": {}
+            }
         }
     }
 }`

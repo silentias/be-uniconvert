@@ -1,6 +1,7 @@
 package services
 
 import (
+	"be-uniconvert/pkg"
 	"fmt"
 	"mime/multipart"
 	"os/exec"
@@ -12,7 +13,11 @@ func ConvertAudio(file *multipart.FileHeader, ext string) (string, error) {
 	filename := filepath.Base(file.Filename)
 	inputPath := filepath.Join("uploads", filename)
 	nameWithoutExt := strings.TrimSuffix(filename, filepath.Ext(filename))
-	outputPath := filepath.Join("uploads", nameWithoutExt+"."+ext)
+	hash, err := pkg.RandomString(10)
+	if err != nil {
+		return "", err
+	}
+	outputPath := filepath.Join("uploads", nameWithoutExt+hash+ext)
 
 	cmd := exec.Command("ffmpeg", "-i", inputPath, outputPath)
 	stderr, err := cmd.CombinedOutput()

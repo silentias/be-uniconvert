@@ -24,4 +24,12 @@ paths:
       - application/json
       responses: {}
       summary: Audio files convert
+  /convert/audio/ext:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses: {}
+      summary: get aviable exts audio to convert
 swagger: "2.0"

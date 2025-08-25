@@ -10,4 +10,5 @@ func InitRouters(r *gin.Engine) {
 	api := r.Group("/api/v1/convert")
 
 	api.POST("audio", controllers.Audio)
+	api.GET("audio/ext", controllers.AudioExt)
 }
