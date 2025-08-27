@@ -1,4 +1,4 @@
-FROM golang:1.21-alpine AS builder
+FROM golang:1.24-alpine AS builder
 
 RUN apk add --no-cache git gcc musl-dev
 
@@ -18,7 +18,7 @@ RUN apk add --no-cache ffmpeg bash ca-certificates
 WORKDIR /app
 
 COPY --from=builder /app/be-uniconvert .
-что 
+
 RUN mkdir -p /app/uploads
 
 EXPOSE 8000
